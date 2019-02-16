@@ -11,7 +11,5 @@ document.ready = function(callback) {
         callback(window.event);
       }
     });
-  } else {
-    window.onload = callback;
-  }
+  } 
 };
