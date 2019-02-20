@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body, ul, li, a, div {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .nav {
+            margin: 100px 200px;
+            display: block;
+            position: relative;
+            
+        }
+        .nav-item {
+            float: left;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease;
+        }
+        .nav-item a {
+            position: absolute;
+            display: block;
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+            background-color: rgb(226, 223, 52);
+            transform: translateZ(15px);
+        }
+        .nav-item .des {
+            position: absolute;
+            width: 100px;
+            height: 30x;
+            background-color: rgb(199, 35, 35);
+            border: 1px solid #ccc;
+            top: 0px;
+            left: 0px;
+            transform: rotateX(90deg) translateZ(15px);
+        }
+        li:hover {
+            transform: rotateX(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="nav-item">
+            <a href="javascript:">item1</a>
+            <div class="des">item--1</div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:">item2</a>
+            <div class="des">item--2</div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:">item3</a>
+            <div class="des">item--3</div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:">item4</a>
+            <div class="des">item--4</div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:">item5</a>
+            <div class="des">item--5</div>
+        </li>
+    </ul>
+</body>
+</html>
