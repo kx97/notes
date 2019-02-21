@@ -24,4 +24,28 @@
   密 码：<input type="password" name="pwd" id="pwd">
 </fieldset>
 ```
-> <fieldset> 标签会在相关表单元素周围绘制边框。<legend> 标签为 fieldset 元素定义标题。
+> fieldset 标签会在相关表单元素周围绘制边框。legend 标签为 fieldset 元素定义标题。
+- - - - -
+## 3、新增的input type 类型
+#### input类型 - email, tel, number, url, search, range
+```
+<form action="">
+  邮箱：<input type="email"> <br>
+  电话：<input type="tel"> <br>
+  数字：<input type="number"> <br>
+  url： <input type="url"> <br>
+  搜索：<input type="search"> <br>
+  拖动滑块：<input type="range"> <br>
+</form>
+```
+#### input类型 - Date Pickers（日期选择器）
+```
+<form action="">
+  时间：<input type="time" >
+  年月日：<input type="date">
+  月份：<input type="month">
+  周：<input type="week">
+  UTC时间：<input type="datatime">
+  本地时间：<input type="datatime-local">
+</form>
+```
