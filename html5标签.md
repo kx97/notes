@@ -1,5 +1,5 @@
-## 1、datalist 标签 -- 选项列表
-#### 使用须知：搭配input使用，与select 相似
+## 1、datalist 标签 -- 下拉列表。
+#### 使用须知：搭配 input 使用，与 select 相似
 #### 具体使用：
 ```
 <input type="text" value="输入选择" list="fruit">
@@ -12,3 +12,16 @@
 </datalist>
 ```
 > input 的 list 指向 datalist 的 id，实现 input 和 datalist 的连接。
+- - - - - - - - - 
+## 2、fieldset 标签 -- 从逻辑上将表单中的元素组合起来。
+#### 使用须知：搭配 legend 的使用
+#### 具体使用：
+```
+<fieldset>
+  <legend>用户登录</legend>
+  用户名：<input type="text" placeholder="用户名" id="name">
+  <br><br>
+  密 码：<input type="password" name="pwd" id="pwd">
+</fieldset>
+```
+> <fieldset> 标签会在相关表单元素周围绘制边框。<legend> 标签为 fieldset 元素定义标题。
