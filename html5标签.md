@@ -11,4 +11,4 @@
   <option>香瓜</option>
 </datalist>
 ```
-#### input的list指向datalist的id，实现input和datalist的连接。
+> input 的 list 指向 datalist 的 id，实现 input 和 datalist 的连接。
