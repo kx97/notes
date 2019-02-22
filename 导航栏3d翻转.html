@@ -7,53 +7,45 @@
     <title>Document</title>
     <style>
         body, ul, li, a, div {
-            padding: 0;
             margin: 0;
+            padding: 0;
         }
-        ul {
+        li {
             list-style: none;
         }
-        a{
-            text-decoration: none;
-            color: #fff;
-        }
         .nav {
-            margin: 100px 200px;
-            display: block;
+            margin: 100px 100px;
             position: relative;
-            
         }
         .nav-item {
             float: left;
             width: 100px;
-            height: 30px;
+            height: 40px;
             text-align: center;
-            line-height: 30px;
-            color: #fff;
-            perspective: 1000px;
-            transform-style: preserve-3d;
+            line-height: 40px;
             transition: transform 0.8s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
         .nav-item a {
-            position: absolute;
             display: block;
+            position: absolute;
             width: 100px;
-            height: 30px;
+            height: 40px;
             border: 1px solid #ccc;
-            background-color: rgb(226, 223, 52);
-            transform: translateZ(15px);
+            color: #222;
+            text-decoration: none;
+            background-color: rgb(56, 116, 177);
         }
         .nav-item .des {
-            position: absolute;
+            position: absolute; 
             width: 100px;
-            height: 30x;
-            background-color: rgb(199, 35, 35);
+            height: 40px;
             border: 1px solid #ccc;
-            top: 0px;
-            left: 0px;
-            transform: rotateX(90deg) translateZ(15px);
+            background-color: rgb(116, 163, 69);
+            transform: rotateX(90deg) translateZ(21px)
         }
-        li:hover {
+        .nav-item:hover {
             transform: rotateX(-90deg);
         }
     </style>

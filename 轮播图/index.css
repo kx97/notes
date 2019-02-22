@@ -1,56 +1,52 @@
-body, div, ul, li, a {
+div, ul, li, img, a {
   margin: 0;
   padding: 0;
 }
-ul {
+
+li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
 .slide-div {
-  position: relative;
-  margin: 100px auto;
   width: 500px;
   height: 300px;
-  border: 1px solid #ccc;
   overflow: hidden;
+  margin: 100px auto;
+  position: relative;
 }
 .img-list {
   position: absolute;
   width: 2000px;
-  height: 300px;
-  top: 0;
   left: 0;
-  z-index: 1;
+  top: 0;
 }
-.img-list img {
+.img-list li {
   float: left;
   width: 500px;
-  height: 300px;
+}
+.img-list li img {
+  display: block;
+  width: 500px;
 }
 .slide-btn {
   position: absolute;
   width: 500px;
-  height: 30px;
-  top: 50%;
-  margin-top: -15px;
-  text-align: center;
-  z-index: 1;
+  /* height: 30px; */
+  font-size: 40px;
+  top: 125px;
 }
 .slide-btn a {
-  display: block;
-  margin: 5px;
-  width: 35px;
-  color: #777;
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 30px;
-  background-color: rgba(99, 99, 99, 0.3);
+  background-color: #ccc;
+  opacity: 0.3;
+  color: #999;
+  margin: 0 5px;
 }
 .slide-btn a:hover {
-  background-color: rgba(99, 99, 99, 0.9);
-  color: black;
+  opacity: 0.8;
+  color: #555;
 }
 .slide-btn .prev {
   float: left;
@@ -60,22 +56,23 @@ a {
 }
 .slide-sel {
   position: absolute;
-  width: 64px;
-  height: 10px;
   top: 90%;
-  left: 50%;
-  margin-left: -32px;
-  z-index: 100;
-
+  left: 42%;
 }
 .slide-sel a {
+  display: block;
   float: left;
+  width: 10px;
+  height: 10px;
+  background-color: #aaa;
+  margin-right: 10px;
   border-radius: 50%;
-  margin-right: 8px;
-  width: 8px;
-  height: 8px;
-  background-color: #999;
+  opacity: 0.5;
 }
-.slide-sel a.on {
-  background-color: #fff;
+.slide-sel a:hover {
+  opacity: 1;
 }
+.slide-sel .on {
+  background-color: #ccc;
+  opacity: 1;
+} 
