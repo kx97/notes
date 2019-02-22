@@ -104,3 +104,38 @@
   <source src="./bgm.ogg">
 </video>
 ```
+- - - - - 
+## 6、拖放
+#### 例如拖动图片 
+#### 第一步：设置要拖动的元素为可拖动
+`<img src="" draggable="true">`
+>  draggable = "true"
+#### 第二步：拖动的元素信息获取 - ondragstart 
+```
+function drag(event) {
+  event.dataTransfer.setData('Text', event.target.id);
+}
+``` 
+> dataTransfer.setData() 设置被拖数据的数据类型和值
+#### 第三步：进行放置元素的目标位置设置 - ondrop
+```
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData('Text');
+  event.target.appendChild(document.getElementById(data));
+}
+```
+> drop默认是以链接打开，需要阻止默认行为。得到被拖动元素id，添加到目标位置中
+#### 第四步：放到何处 - ondragover，ondragover 事件规定在何处放置被拖动的数据。
+```
+function allowDrop(event) {
+  event.preventDefault();
+}
+```
+> 默认的，无法将数据和元素传到其他元素中，需要阻止元素的默认行为
+#### 具体实现
+```
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69" />
+
+```
