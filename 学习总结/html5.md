@@ -139,3 +139,107 @@ function allowDrop(event) {
 <img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69" />
 
 ```
+- - - - - 
+## 7、地理定位
+#### getCurrentPosition() 获取位置
+```
+var pos = document.getElementById('pos');
+function getLocal() {
+  if(navigator.geolocation) {
+    return navigator.geolocation.getCurrentPosition(showLocal);
+  } else {
+    return "你的设备不支持定位";
+  }
+}
+function showLocal(position) {
+  pos.innerHTML = "Latitude: " + position.coords.latitude + '<br>' +
+  "longitude: " + position.coords.longitude;
+}
+```
+> 返回用户位置的经度和纬度
+#### watchPosition() 更新位置
+```
+var pos = document.getElementById('pos');
+function getLocal() {
+  if(navigator.geolocation) {
+    return navigator.geolocation.watchPosition(showLocal);
+  } else {
+    return "你的设备不支持定位";
+  }
+}
+function showLocal(position) {
+  pos.innerHTML = "latitude: " + position.coords.latitude + "<br> 
+  longitude: " + position.coords.longitude;
+}
+```
+> dearWatch() 停止watchPosition() 的方法
+- - - - -
+## 8、Web Storage 
+#### 1、localStorage - 没有时间限制的数据存储
+```
+if(localStorage.pagecount) {
+  localStorage.pagecount = parseInt(localStorage.pagecount) + 1;
+} else {
+  localStorage.pagecount = 1;
+}
+```
+> 记录用户访问网页的次数，页面关闭后仍然记录
+#### 2、sessionStorage - 针对session的数据存储
+```
+if(sessionStorage.pagecount) {
+  sessionStorage.pagecount = parseInt(sessionStorage.pagecount) + 1;
+} else {
+  sessionStorage.pagecount = 1;
+}
+```
+> 页面关闭后数据清除
+- - - - -
+## 9、Application Cache（应用程序缓存）
+> 可在没有网络的情况下，访问应用
+> 优势：1. 离线浏览 2. 加载速度加快 3. 减少服务器负载
+#### 具体应用：
+```
+<html manifest="demo.appcache">
+```
+#### 关于manifest文件
+```
+// CACHE MANIFEST后的文件将在首次下载后进行缓存
+CACHE MANIFEST
+/theme.css
+/logo.gif
+/main.js
+
+// NETWORK后的文件需要与服务器连接，不能被缓存
+NETWORK
+login.asp
+
+// FALLBACK后的文件无法建立连接时，后面的文件会替换
+FALLBACK
+/html5/ /404.html
+```
+> 为了确保浏览器更新缓存，需要更新manifest文件
+- - - - - 
+
+
+## 10、Web Workers
+> Web Worker 是运行在后台的JavaScript脚本，独立于其他脚本，不会影响页面性能
+#### 具体实现：
+```
+var w;
+function startWorker() {
+  if(typeOf(Worker) !== 'undefined') {
+    if(typeOf(w) == 'undefined') {
+      w = new Worker('workers.js');
+    }
+    w.onmessage = function(event) {
+      document.getElementById('result').innerHTML = event.data;
+    };
+  } else {
+    document.getElementById('result').innerHTML = '你的浏览器不支持Web Workers';
+  }
+}
+function stopWorker() {
+  w.terminate();
+}
+```
+> Web Worker 无法访问JavaScript的对象：1、window对象 2、document对象 3、parent对象
