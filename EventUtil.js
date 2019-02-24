@@ -6,11 +6,25 @@
         // 确保 isCapture 是 Boolean类型
         isCapture = isCapture ? true : false;
         element.addEventListener(type, handler, isCapture);
-      } else {
+      } else if(element.attachEvent) {
         element.attachEvent('on' + type, function() {
           return handler.call(element, window.event);// 函数回调模式
           // 实现element调用handler函数，将window.event 传入handler。
         });
+      } else {
+        element['on' + type] = handler;
+      }
+    },
+    removeEvent: function(element, type, handler, isCapture) {
+      if(element.removeEventListener) {
+        isCapture = isCapture ? true : false;
+        element.removeEventListener(type, handler, isCapture);
+      } else if(detachEvent) {
+        element.detachEvent("on" + type, function() {
+          return handler.call(element, window.event);
+        });
+      } else {
+        element['on' + type] = null;
       }
     },
     // 获取对象的兼容处理
@@ -30,7 +44,7 @@
       }
     },
     // 阻止默认行为
-    preventDefault: function (e) {  
+    preventDefault: function (e) {
       if(e.preventDefault) {
         e.preventDefault();
       } else {

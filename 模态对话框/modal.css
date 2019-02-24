@@ -1,0 +1,49 @@
+body, input, div, h3, i{
+  margin: 0;
+  padding: 0;
+}
+
+.dialogDiv {
+  display: none;
+  overflow: hidden;
+}
+
+.dialog-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ccc;
+  z-index: 100;
+  opacity: 0.7;
+}
+.dialog {
+  position: absolute;
+  z-index: 1000;
+  border: 2px solid #888;
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 40%;
+  background-color: #aaa;
+}
+.dialog-h {
+  padding: 0 20px;
+  border-bottom: 2px solid #888;
+  height: 50px;
+  position: relative;
+}
+.dialog-h h3 {
+  line-height: 50px;
+}
+.dialog-h i {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.dialog-b {
+  padding: 0 10px;
+}
