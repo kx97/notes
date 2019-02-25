@@ -27,7 +27,7 @@
 > fieldset 标签会在相关表单元素周围绘制边框。legend 标签为 fieldset 元素定义标题。
 - - - - -
 ## 3、新增的input type 类型
-#### input类型 - email, tel, number, url, search, range, color
+### input类型 - email, tel, number, url, search, range, color
 #### 具体使用：
 ```
 <form action="">
@@ -40,7 +40,7 @@
   颜色：<input type="color"> <br>
 </form>
 ```
-#### input类型 - Date Pickers（日期选择器）
+### input类型 - Date Pickers（日期选择器）
 #### 具体使用：
 ```
 <form action="">
@@ -54,33 +54,33 @@
 ```
 - - - - -
 ## 4、新增的input 新属性
-#### placeholder属性
+### placeholder属性
 #### 具体使用：
 `<input type="text" placeholder="输入用户名" id="name">`
 > 占位符， 当用户输入时文本框内的文字消失
-#### autofocus属性
+### autofocus属性
 #### 具体使用：
 `<input type="text" autofocus>`
 > 页面加载时，input元素自动获得焦点
-#### multiple属性
+### multiple属性
 #### 具体使用：
 `<input type="file" multiple>`
 > 多文件上传
-#### autocomplete属性
+### autocomplete属性
 #### 具体使用：
 `<input type="text" autocomplete name="username">`
 > 自动记录输入内容，on - 记录，off - 不记录。注意：1、需要提交后才能记录。2、必须具有name属性
-#### required属性
+### required属性
 #### 具体使用：
 `<input type="text" required>`
 > 必填项，内容不能为空
-#### accesskey属性
+### accesskey属性
 #### 具体使用：
 `<input type="text" accesskey="s">`
 > 规定获取焦点的快捷键，使用 Alt + s 的形式
 - - - - - 
 ## 5、多媒体标签
-#### audio - 音频
+### audio - 音频
 #### 具体使用：
 `<audio src="./gbm.mp3" autoplay controls loop="3"></audio>`
 > autoplay: 自动播放，controls: 控制暂停还是开始， loop: 控制循环次数，loop="-1"时，无限循环播放
@@ -92,7 +92,7 @@
   <source src="./bgm.ogg">
 </audio>
 ```
-#### video - 视频
+### video - 视频
 #### 具体使用：
 `<video src="./gbm.mp4" autoplay controls loop="3"></video>`
 > autoplay: 自动播放，controls: 控制暂停还是开始， loop: 控制循环次数，loop="-1"时，无限循环播放，width，height
@@ -106,7 +106,7 @@
 ```
 - - - - - 
 ## 6、拖放
-#### 例如拖动图片 
+### 例如拖动图片 
 #### 第一步：设置要拖动的元素为可拖动
 `<img src="" draggable="true">`
 >  draggable = "true"
@@ -141,7 +141,7 @@ function allowDrop(event) {
 ```
 - - - - - 
 ## 7、地理定位
-#### getCurrentPosition() 获取位置
+### getCurrentPosition() 获取位置
 ```
 var pos = document.getElementById('pos');
 function getLocal() {
@@ -157,7 +157,7 @@ function showLocal(position) {
 }
 ```
 > 返回用户位置的经度和纬度
-#### watchPosition() 更新位置
+### watchPosition() 更新位置
 ```
 var pos = document.getElementById('pos');
 function getLocal() {
@@ -175,7 +175,7 @@ function showLocal(position) {
 > dearWatch() 停止watchPosition() 的方法
 - - - - -
 ## 8、Web Storage 
-#### 1、localStorage - 没有时间限制的数据存储
+### 1、localStorage - 没有时间限制的数据存储
 ```
 if(localStorage.pagecount) {
   localStorage.pagecount = parseInt(localStorage.pagecount) + 1;
@@ -184,7 +184,7 @@ if(localStorage.pagecount) {
 }
 ```
 > 记录用户访问网页的次数，页面关闭后仍然记录
-#### 2、sessionStorage - 针对session的数据存储
+### 2、sessionStorage - 针对session的数据存储
 ```
 if(sessionStorage.pagecount) {
   sessionStorage.pagecount = parseInt(sessionStorage.pagecount) + 1;
