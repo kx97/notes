@@ -239,7 +239,29 @@ function startWorker() {
   }
 }
 function stopWorker() {
-  w.terminate();
+  w.terminate(); // 终止web worker
 }
+
+// workers.js文件
+var i = 0;
+function timedcount() {
+  i = i + 1;
+  postMessage(i); // 用于向HTML传递一消息
+  setTimeout("timedcount()", 500);
+}
+timedcount();
 ```
 > Web Worker 无法访问JavaScript的对象：1、window对象 2、document对象 3、parent对象
+- - - - -
+## 服务器发送事件
+> 网页自动获取来服务器的更新
+```
+if(typeof(EventSource) !== 'undefined') {
+  var source = new EventSource('demo.php');
+  source.onmessage = function(e) {
+    document.getElementById('id').innerHTML += e.data;
+  }
+} else {
+  return "你的游览器不支持 server-send 事件";
+}
+```
