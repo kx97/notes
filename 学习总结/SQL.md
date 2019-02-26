@@ -90,6 +90,7 @@ create table 表名
 ### AUTO INCREMENT - 新数据插入生成唯一数字
 `P_id int not null auto increment`
 > 起始值是1，每次添加数据数值加1
+
 #### 在oracle中要创建一个序列
 ```
 create sequence 序列名
