@@ -1,0 +1,6 @@
+{
+  "liveServer.settings.CustomBrowser": "chrome",
+  "open-in-browser.default": "Chrome",
+  "prettier.arrowParens": "always",
+  "view-in-browser.customBrowser": "chrome"
+}
