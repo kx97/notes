@@ -110,7 +110,7 @@
 #### 第一步：设置要拖动的元素为可拖动
 `<img src="" draggable="true">`
 >  draggable = "true"
-#### 第二步：拖动的元素信息获取 - ondragstart 
+#### 第二步：被拖动的元素信息设置 - ondragstart 
 ```
 function drag(event) {
   event.dataTransfer.setData('Text', event.target.id);
@@ -175,6 +175,7 @@ function showLocal(position) {
 > dearWatch() 停止watchPosition() 的方法
 - - - - -
 ## 8、Web Storage 
+> API：setItem(key, value), getItem(key), removeItem(key), clear(), key(index)
 ### 1、localStorage - 没有时间限制的数据存储
 ```
 if(localStorage.pagecount) {
@@ -253,15 +254,36 @@ timedcount();
 ```
 > Web Worker 无法访问JavaScript的对象：1、window对象 2、document对象 3、parent对象
 - - - - -
-## 服务器发送事件
-> 网页自动获取来服务器的更新
+## 11、新的语义元素
+> 设置 display: block; 实现在旧版本浏览器中使用
 ```
-if(typeof(EventSource) !== 'undefined') {
-  var source = new EventSource('demo.php');
-  source.onmessage = function(e) {
-    document.getElementById('id').innerHTML += e.data;
+<header></header>
+<nav></nav>
+<section></section>
+<article></article>
+<aside></aside>
+<footer></footer>
+```
+- - - - - 
+## 12、WebSocket
+> 是 HTML5 开始提供的一种在单个 TCP 连接上进行全双工通讯的协议。
+```
+if('WebSocket' in window) {
+  // 打开一个web socket
+  let ws = new WebSocket(url)
+  // web socket 连接上后，发送数据
+  ws.onopen = function() {
+    ws.send(data)
+  }
+  // 服务端返回数据
+  ws.onmessage = function(evt) {
+    evt.data
+  }
+  // 关闭 web socket 连接
+  ws.onclose = function() {
+
   }
 } else {
-  return "你的游览器不支持 server-send 事件";
+   // 浏览器不支持 WebSocket
 }
 ```
