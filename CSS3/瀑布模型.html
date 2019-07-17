@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>瀑布模型</title>
+  <style>
+    .images {
+      column-count: 3;
+      column-gap: 0em;
+      width: 100%;
+      margin: 2em auto;
+    }
+    .image {
+      width: 95%;
+      margin-bottom: 1.5em;
+      break-inside: avoid;
+    }
+    .image img {
+      width: 100%;
+      display: block;
+    }
+    @media screen and (max-width: 700px) {
+      .images {
+        column-count: 2;
+      }
+      .image {
+        margin-bottom: 0.5rem;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      .image {
+        margin-bottom: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="images">
+    <div class="image">
+      <img src="./images/p-1.jpg" alt="">
+    </div>
+    <div class="image">
+      <img src="./images/p-2.jpg" alt="">
+    </div>
+    <div class="image">
+      <img src="./images/p-3.jpg" alt="">
+    </div>
+    <div class="image">
+      <img src="./images/p-4.jpg" alt="">
+    </div>
+    <div class="image">
+      <img src="./images/p-5.jpeg" alt="">
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('resize', resizeWin)
+    function resizeWin() {
+      let size = window.innerWidth / 100
+      let body = document.getElementsByTagName('body')
+      console.log(body)
+      body[0].style.fontSize = size + 'px'
+    }
+  </script>
+</body>
+</html>
