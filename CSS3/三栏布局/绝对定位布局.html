@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>绝对定位布局</title>
+  <style>
+    .container {
+      overflow: hidden;
+      position: relative;
+    }
+    .left {
+      float: left;
+      width: 200px;
+      background-color: green;
+    }
+    .right {
+      float: right;
+      width: 200px;
+      background-color: blue;
+    }
+    .center {
+      background-color: red;
+      position: absolute;
+      left: 200px;
+      right: 200px;
+      top: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    左栏向左浮动，右栏向右浮动，设置中间栏绝对定位，通过left，right 实现布局
+  </p>
+  <div class="container">
+    <div class="center">
+      center
+    </div>
+    <div class="left">
+      left
+    </div>
+    <div class="right">
+      right
+    </div>
+  </div>
+</body>
+</html>
